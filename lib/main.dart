@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:deep_linking_template/services/notification/one_signal_notification.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart' show PlatformException;
@@ -34,6 +35,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    OneSignalService().configOneSignal();
     initDeepLinks();
   }
 
