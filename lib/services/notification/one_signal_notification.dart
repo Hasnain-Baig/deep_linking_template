@@ -22,11 +22,12 @@ sendNotification(String externalUserId, String message) async {
     var url = "https://onesignal.com/api/v1/notifications";
     var headers = {
       "Content-Type": "application/json; charset=utf-8",
-      "Authorization": "ONE_SIGNAL_AUTH_KEY", //from one signal auth key
+      "Authorization": "ONE_SIGNAL_REST_API_KEY", //from one signal auth key
     };
     var body = {
       "app_id": "APP_ID",
       "contents": {"en": message},
+      "data":{"myData":"whenTapOnNotificationIfNeededToPerformTask"},//(optional)
       "include_external_user_ids": [externalUserId],
     };
 
